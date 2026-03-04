@@ -1,0 +1,71 @@
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS temp
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# Parallels Desktop VM files
+*.pvm
+*.hdd
+*.mem
+*.sav
+
+# Virtual machine disks
+*.vhd
+*.vhdx
+*.vmdk
+*.qcow2
+
+# Windows image artifacts
+*.wim
+*.esd
+*.iso
+
+# Mount directories
+Mount/
+mount/
+
+# Build / output folders
+Images/
+images/
+output/
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+
+# Obsidian
+.obsidian/
+
+# Obsidian cache files
+.obsidian/workspace.json
+.obsidian/workspace
+.obsidian/cache
+.obsidian/plugins/
+
+# Obsidian temp files
+*.obsidian
