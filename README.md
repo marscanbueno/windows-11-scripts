@@ -19,8 +19,6 @@ These scripts are useful for:
 
 Most scripts are written as **Windows batch files** so they can run on any Windows machine without requiring additional tools.
 
-Status
-
 ## Disclaimer
 
 This repository is currently a work in progress.
