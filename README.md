@@ -1,11 +1,11 @@
 # Windows 11 Scripts
 
-![Platform](https://img.shields.io/badge/platform-Windows%2011-blue)
-![Language](https://img.shields.io/badge/language-Batch%20Script-green)
-![License](https://img.shields.io/badge/license-MIT-lightgrey)
-![Status](https://img.shields.io/badge/status-Active-brightgreen)
+![Platform](https://img.shields.io/badge/platform-Windows%2011-blue)  
+![Language](https://img.shields.io/badge/language-Batch%20Script-green)  
+![License](https://img.shields.io/badge/license-MIT-lightgrey) 
+![Status](https://img.shields.io/badge/status-Active-brightgreen)  
 
-This repository contains a collection of Windows 11 command line and batch scripts used for troubleshooting, deployment, and system administration.
+This repository contains a collection. of Windows 11 command line and batch scripts used for troubleshooting, deployment, and system administration.
 
 The goal of this project is to build a practical toolkit of small scripts that simplify common diagnostic tasks and make them easier to run in real environments.
 
