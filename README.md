@@ -3,7 +3,7 @@
 ![Platform](https://img.shields.io/badge/platform-Windows%2011-blue)  
 ![Language](https://img.shields.io/badge/language-Batch%20Script-green)  
 ![License](https://img.shields.io/badge/license-MIT-lightgrey) 
-![Status](https://img.shields.io/badge/status-Active-brightgreen)  
+![Status](https://img.shields.io/badge/status-Active-brightgreen)    
 
 This repository contains a collection. of Windows 11 command line and batch scripts used for troubleshooting, deployment, and system administration.
 
