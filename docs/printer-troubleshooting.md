@@ -1,4 +1,4 @@
-# Windows Printer Troubleshooting (CLI Quick Guide)
+# Windows Printer Troubleshooting
 
 This guide lists common command line tools used to diagnose and repair printer issues on Windows endpoints.
 
@@ -10,7 +10,7 @@ Most printer problems fall into one of these categories:
 
 ## Table of Contents
 
-- [Windows Printer Troubleshooting (CLI Quick Guide)](#windows-printer-troubleshooting-cli-quick-guide)
+- [Windows Printer Troubleshooting](#windows-printer-troubleshooting)
   - [Table of Contents](#table-of-contents)
 - [1. Device / Network Checks](#1-device--network-checks)
   - [Check network connectivity](#check-network-connectivity)
