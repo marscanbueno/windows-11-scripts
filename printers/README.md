@@ -10,9 +10,9 @@ Most printer problems fall into one of these categories:
 
 ## Table of Contents
 
-1. Device / Network Checks
-    - Check Network Connectivity
-    - Open Printer Web Interface
+1. [Device / Network Checks](#1-device--network-checks)
+    - [Check Network Connectivity](#check-network-connectivity)
+    - [Open Printer Web Interface](#open-printer-web-interface)
 2. Windows Printer Configuration
     - List Installed Printers
     - Check Printer Queue
