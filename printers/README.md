@@ -95,9 +95,11 @@ These commands verify that the printer itself is reachable.
 ## Check network connectivity
 
 **Purpose**
+
 Verify that the printer responds on the network.
 
 **Applies to**
+
 Network printers.
 
 **Command**
@@ -113,7 +115,9 @@ ping 192.168.1.45
 ```
 
 **Permission level**
+
 *Standard User*
+
 ### **Interpretation**
 
 **If Replies are received:**
@@ -133,9 +137,11 @@ ping 192.168.1.45
 ## Open printer web interface
 
 **Purpose**
+
 Confirm that the printer hardware is responding and accessible.
 
 **Applies to**
+
 Network printers with an embedded web server.
 
 **Command**
@@ -151,7 +157,9 @@ start http://192.168.1.45
 ```
 
 **Permission level**  
+
 *Standard User*
+
 ### **Notes**
 
 - Does not apply to USB printers
@@ -167,6 +175,7 @@ These commands verify how Windows is configured to use the printer.
 ## List installed printers
 
 **Purpose**
+
 View installed printers along with driver and port information.
 
 **Command**
@@ -191,6 +200,7 @@ Useful for identifying:
 ## Check printer queue
 
 **Purpose**
+
 Identify stuck or failed print jobs.
 
 **Command**
@@ -200,7 +210,9 @@ wmic printjob list brief
 ```
 
 **Permission level**  
+
 *Standard User*
+
 ### **Notes**
 
 Jobs stuck in **Spooling** or **Printing** often indicate spooler problems.
@@ -209,6 +221,7 @@ Jobs stuck in **Spooling** or **Printing** often indicate spooler problems.
 ## Check printer ports
 
 **Purpose**
+
 Determine how Windows connects to the printer.
 
 **PowerShell**
@@ -226,6 +239,7 @@ Get-PrinterPort
 - USB  
 - WSD  
 - IP_192.168.x.x
+
 ### **Notes**
 
 Many administrators prefer **Standard TCP/IP ports** instead of WSD because they are more stable.
@@ -789,7 +803,7 @@ Locally connected printers.
 # Where to Find Printer Drivers
 
 Manufacturers often hide drivers in multiple locations.  
-The sources below are the most reliable places to locate **PCL and PostScript drivers**.
+The sources below are the most reliable places to locate **PCL** and **PostScript** drivers.
 
 ---
 # HP Drivers
@@ -799,6 +813,7 @@ HP commonly provides drivers in three formats:
 - PCL6  
 - PCL5  
 - PostScript (PS)
+- 
 ### Primary driver source
 
 **HP Universal Print Driver**
@@ -838,6 +853,7 @@ Epson printers typically provide:
 - ESC/P  
 - PCL  
 - PostScript (optional on some models)
+
 ### Primary source
 
 **Epson Download Center website.
@@ -867,6 +883,7 @@ This supports multiple Epson network printers.
 # Xerox Drivers
 
 Xerox provides several enterprise drivers.
+
 ### Primary driver
 
 **Xerox Global Print Driver**
