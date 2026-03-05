@@ -16,14 +16,10 @@ Most printer problems fall into one of these categories:
   - [Check network connectivity](#check-network-connectivity)
     - [**Interpretation**](#interpretation)
   - [Open printer web interface](#open-printer-web-interface)
-    - [**Notes**](#notes)
 - [2. Windows Printer Configuration](#2-windows-printer-configuration)
   - [List installed printers](#list-installed-printers)
-    - [**Notes**](#notes-1)
   - [Check printer queue](#check-printer-queue)
-    - [**Notes**](#notes-2)
   - [Check printer ports](#check-printer-ports)
-    - [**Notes**](#notes-3)
 - [3. Spooler and Driver Diagnostics](#3-spooler-and-driver-diagnostics)
   - [Check print spooler status](#check-print-spooler-status)
   - [Restart the print spooler](#restart-the-print-spooler)
@@ -50,40 +46,40 @@ Most printer problems fall into one of these categories:
   - [WSD (Web Services for Devices)](#wsd-web-services-for-devices)
   - [USB Port](#usb-port)
 - [Where to Find Printer Drivers](#where-to-find-printer-drivers)
-- [HP Drivers](#hp-drivers)
-    - [Primary driver source](#primary-driver-source)
+  - [HP Drivers](#hp-drivers)
+    - [Primary source for HP Drivers](#primary-source-for-hp-drivers)
     - [HP driver repository](#hp-driver-repository)
     - [HP Enterprise driver packs](#hp-enterprise-driver-packs)
-- [Epson Drivers](#epson-drivers)
+  - [Epson Drivers](#epson-drivers)
     - [Primary source](#primary-source)
     - [Epson global driver](#epson-global-driver)
-- [Xerox Drivers](#xerox-drivers)
+  - [Xerox Drivers](#xerox-drivers)
     - [Primary driver](#primary-driver)
     - [Xerox driver downloads](#xerox-driver-downloads)
-- [Ricoh Drivers](#ricoh-drivers)
-  - [Primary Source](#primary-source-1)
-  - [Driver Types](#driver-types)
-    - [PCL6 Driver](#pcl6-driver)
-    - [PostScript Driver](#postscript-driver)
-    - [RPCS Driver](#rpcs-driver)
-    - [Ricoh Universal Print Driver](#ricoh-universal-print-driver)
+  - [Ricoh Drivers](#ricoh-drivers)
+    - [Primary Source for Ricoh Drivers](#primary-source-for-ricoh-drivers)
+    - [Ricoh Driver Types](#ricoh-driver-types)
+      - [PCL6 Driver](#pcl6-driver)
+      - [PostScript Driver](#postscript-driver)
+      - [RPCS Driver](#rpcs-driver)
+      - [Ricoh Universal Print Driver](#ricoh-universal-print-driver)
     - [When to Try a Different Driver](#when-to-try-a-different-driver)
-  - [Example Troubleshooting Scenario](#example-troubleshooting-scenario)
+    - [Example Troubleshooting Scenario](#example-troubleshooting-scenario)
 - [Comparing driver types across vendors](#comparing-driver-types-across-vendors)
 - [Microsoft Update Catalog](#microsoft-update-catalog)
 - [Driver Installation (Manual)](#driver-installation-manual)
 - [Best Practice for Driver Selection](#best-practice-for-driver-selection)
 - [Common Printer Helpdesk Tickets and Fast Fixes](#common-printer-helpdesk-tickets-and-fast-fixes)
   - [Printer Shows Offline](#printer-shows-offline)
-- [Print Jobs Stuck in Queue](#print-jobs-stuck-in-queue-1)
-- [PCL XL Error Pages](#pcl-xl-error-pages-1)
-- [Printer Prints Random Characters](#printer-prints-random-characters)
-- [Printer Not Found During Installation](#printer-not-found-during-installation-1)
-- [Printing Is Very Slow](#printing-is-very-slow)
-- [Printer Driver Installation Fails](#printer-driver-installation-fails)
-- [Printer Works for Some Users but Not Others](#printer-works-for-some-users-but-not-others)
-- [Printer Disappears After Reboot](#printer-disappears-after-reboot)
-- [Test Page Prints but Documents Fail](#test-page-prints-but-documents-fail)
+  - [Print Jobs Stuck in Queue](#print-jobs-stuck-in-queue-1)
+  - [PCL XL Error Pages](#pcl-xl-error-pages-1)
+  - [Printer Prints Random Characters](#printer-prints-random-characters)
+  - [Printer Not Found During Installation](#printer-not-found-during-installation-1)
+  - [Printing Is Very Slow](#printing-is-very-slow)
+  - [Printer Driver Installation Fails](#printer-driver-installation-fails)
+  - [Printer Works for Some Users but Not Others](#printer-works-for-some-users-but-not-others)
+  - [Printer Disappears After Reboot](#printer-disappears-after-reboot)
+  - [Test Page Prints but Documents Fail](#test-page-prints-but-documents-fail)
 - [Quick Diagnostic Shortcut](#quick-diagnostic-shortcut)
 
 ---
@@ -160,7 +156,7 @@ start http://192.168.1.45
 
 *Standard User*
 
-### **Notes**
+**Notes**
 
 - Does not apply to USB printers
 - If the page loads, the printer is online and reachable
@@ -188,7 +184,7 @@ wmic printer get name,portname,drivername
 
 *Standard User*
 
-### **Notes**
+**Notes**
 
 Useful for identifying:
 
@@ -213,7 +209,7 @@ wmic printjob list brief
 
 *Standard User*
 
-### **Notes**
+**Notes**
 
 Jobs stuck in **Spooling** or **Printing** often indicate spooler problems.
 
@@ -240,7 +236,7 @@ Get-PrinterPort
 - WSD  
 - IP_192.168.x.x
 
-### **Notes**
+**Notes**
 
 Many administrators prefer **Standard TCP/IP ports** instead of WSD because they are more stable.
 
@@ -803,10 +799,11 @@ Locally connected printers.
 # Where to Find Printer Drivers
 
 Manufacturers often hide drivers in multiple locations.  
+
 The sources below are the most reliable places to locate **PCL** and **PostScript** drivers.
 
 ---
-# HP Drivers
+## HP Drivers
 
 HP commonly provides drivers in three formats:
 
@@ -814,7 +811,7 @@ HP commonly provides drivers in three formats:
 - PCL5  
 - PostScript (PS)
 - 
-### Primary driver source
+### Primary source for HP Drivers
 
 **HP Universal Print Driver**
 
@@ -846,7 +843,7 @@ Often labeled as:
 These usually contain multiple driver types.
 
 ---
-# Epson Drivers
+## Epson Drivers
 
 Epson printers typically provide:
 
@@ -880,7 +877,7 @@ Epson Universal Print Driver
 This supports multiple Epson network printers.
 
 ---
-# Xerox Drivers
+## Xerox Drivers
 
 Xerox provides several enterprise drivers.
 
@@ -903,7 +900,7 @@ https://www.support.xerox.com
 Search by model.
 
 ---
-# Ricoh Drivers
+## Ricoh Drivers
 
 Ricoh printers and multifunction devices typically provide several driver types depending on the model.
 
@@ -914,7 +911,7 @@ Common driver types include:
 - RPCS (Ricoh Printer Command Stream)
 
 ---
-## Primary Source
+### Primary Source for Ricoh Drivers
 
 Drivers for Ricoh printers are available on the Ricoh support website.
 
@@ -929,9 +926,9 @@ Support → Search by Model → Drivers & Downloads
 ```
 
 ---
-## Driver Types
+### Ricoh Driver Types
 
-### PCL6 Driver
+#### PCL6 Driver
 
 PCL6 is the most commonly used Ricoh driver for office environments.
 
@@ -948,7 +945,7 @@ Advantages:
 - Good compatibility with Windows
 
 ---
-### PostScript Driver
+#### PostScript Driver
 
 Ricoh devices also support PostScript on many models.
 
@@ -964,7 +961,7 @@ Advantages:
 - Better compatibility with design software
 
 ---
-### RPCS Driver
+#### RPCS Driver
 
 RPCS stands for **Ricoh Printer Command Stream**.
 
@@ -984,7 +981,7 @@ Typical usage:
 Note that RPCS drivers only work with Ricoh printers.
 
 ---
-### Ricoh Universal Print Driver
+#### Ricoh Universal Print Driver
 
 Ricoh also offers a universal driver that supports multiple Ricoh devices.
 
@@ -1014,7 +1011,7 @@ Switching drivers can resolve issues such as:
 - driver incompatibility
 
 ---
-## Example Troubleshooting Scenario
+### Example Troubleshooting Scenario
 
 If a Ricoh printer prints incorrectly or generates errors:
 
@@ -1106,7 +1103,7 @@ start http://PRINTER_IP
 - Update printer IP if it changed
 
 ---
-# Print Jobs Stuck in Queue
+## Print Jobs Stuck in Queue
 
 **Symptoms**
 
@@ -1130,7 +1127,7 @@ net start spooler
 If jobs remain stuck, clear spool folder.
 
 ---
-# PCL XL Error Pages
+## PCL XL Error Pages
 
 **Symptoms**
 
@@ -1156,7 +1153,7 @@ Example:
 HP Universal Print Driver – PS
 
 ---
-# Printer Prints Random Characters
+## Printer Prints Random Characters
 
 **Symptoms**
 
@@ -1180,7 +1177,7 @@ Common combinations:
 - PostScript
 
 ---
-# Printer Not Found During Installation
+## Printer Not Found During Installation
 
 **Symptoms**
 
@@ -1197,7 +1194,7 @@ Printer cannot be discovered during installation.
 Install printer manually using IP address.
 
 ---
-# Printing Is Very Slow
+## Printing Is Very Slow
 
 **Symptoms**
 
@@ -1216,7 +1213,7 @@ Long delay before printing begins.
 - Update printer firmware
 
 ---
-# Printer Driver Installation Fails
+## Printer Driver Installation Fails
 
 **Symptoms**
 
@@ -1241,7 +1238,7 @@ printui /s /t2
 Remove the driver and install the correct version.
 
 ---
-# Printer Works for Some Users but Not Others
+## Printer Works for Some Users but Not Others
 
 **Symptoms**
 
@@ -1259,7 +1256,7 @@ Remove the driver and install the correct version.
 Remove and reinstall printer for the affected user.
 
 ---
-# Printer Disappears After Reboot
+## Printer Disappears After Reboot
 
 **Symptoms**
 
@@ -1275,7 +1272,7 @@ Printer installed but missing after restart.
 Reinstall printer with administrator privileges.
 
 ---
-# Test Page Prints but Documents Fail
+## Test Page Prints but Documents Fail
 
 **Symptoms**
 
