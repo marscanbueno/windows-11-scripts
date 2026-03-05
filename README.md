@@ -19,6 +19,18 @@ These scripts are useful for:
 
 Most scripts are written as **Windows batch files** so they can run on any Windows machine without requiring additional tools.
 
+## Disclaimer
+
+This repository is currently a work in progress.
+
+Some scripts are still being reviewed and sanitized before publication.  
+
+Legacy scripts may be incomplete, inconsistent, or temporarily unavailable while they are cleaned up and documented.
+
+Expect changes as the repository evolves.
+
+Use any scripts in this repository at your own discretion.
+
 ---
 # Repository Structure
 
