@@ -1136,10 +1136,11 @@ If jobs remain stuck, clear spool folder.
 
 Printer prints an error page containing text similar to:
 
+```
 PCL XL error  
 Subsystem: TEXT  
 Error: IllegalTag
-
+```
 **Common causes**
 
 - PCL driver incompatibility
@@ -1233,7 +1234,7 @@ Remove driver and reinstall.
 
 Open driver manager.
 
-```
+```cmd
 printui /s /t2
 ```
 
