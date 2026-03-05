@@ -10,57 +10,81 @@ Most printer problems fall into one of these categories:
 
 ## Table of Contents
 
-1. [Device / Network Checks](#1-device--network-checks)
-    - [Check Network Connectivity](#check-network-connectivity)
-    - [Open Printer Web Interface](#open-printer-web-interface)
-2. Windows Printer Configuration
-    - List Installed Printers
-    - Check Printer Queue
-    - Check Printer Ports
-3. Spooler and Driver Diagnostics
-    - Check Print Spooler Status
-    - Restart the Print Spooler
-    - Clear the Print Spool Folder
-    - Open Printer Driver Management
-    - Install Printer Driver Manually
-4. Quick Diagnostic Workflow
-5. Permission Summary
-6. Common Printer Failures and Usual Causes
-    - PCL XL Error Pages
-    - Print Jobs Stuck in Queue
-    - Printer Appears Offline
-    - Incorrect or Missing Printer Drivers
-    - Printer Not Found During Installation
-    - Documents Print Incorrectly
-    - Slow Printing
-7. Printer Driver Types Explained
-    - PCL
-    - PostScript
-    - Universal Print Drivers
-8. Printer Port Types Explained
-    - Standard TCP/IP Port
-    - WSD
-    - USB Port
-9. Where to Find Printer Drivers
-    - HP Drivers
-    - Epson Drivers
-    - Xerox Drivers
-    - Ricoh Drivers
-    - Microsoft Update Catalog
-    - Driver Installation
-10. Best Practice for Driver Selection
-11. Common Printer Helpdesk Tickets and Fast Fixes
-	- Printer Shows Offline
-	- Print Jobs Stuck in Queue
-	- PCL XL Error Pages
-	- Printer Prints Random Characters
-	- Printer Not Found During Installation
-	- Printing Is Very Slow
-	- Printer Driver Installation Fails
-	- Printer Works for Some Users but Not Others
-	- Printer Disappears After Reboot
-	- Test Page Prints but Documents Fail
-12. Quick Diagnostic Shortcut
+- [Windows Printer Troubleshooting (CLI Quick Guide)](#windows-printer-troubleshooting-cli-quick-guide)
+  - [Table of Contents](#table-of-contents)
+- [1. Device / Network Checks](#1-device--network-checks)
+  - [Check network connectivity](#check-network-connectivity)
+    - [**Interpretation**](#interpretation)
+  - [Open printer web interface](#open-printer-web-interface)
+    - [**Notes**](#notes)
+- [2. Windows Printer Configuration](#2-windows-printer-configuration)
+  - [List installed printers](#list-installed-printers)
+    - [**Notes**](#notes-1)
+  - [Check printer queue](#check-printer-queue)
+    - [**Notes**](#notes-2)
+  - [Check printer ports](#check-printer-ports)
+    - [**Notes**](#notes-3)
+- [3. Spooler and Driver Diagnostics](#3-spooler-and-driver-diagnostics)
+  - [Check print spooler status](#check-print-spooler-status)
+  - [Restart the print spooler](#restart-the-print-spooler)
+  - [Clear the print spool folder](#clear-the-print-spool-folder)
+  - [Open printer driver management](#open-printer-driver-management)
+  - [Install printer driver manually](#install-printer-driver-manually)
+- [4. Quick Diagnostic Workflow](#4-quick-diagnostic-workflow)
+- [5. Permission Summary](#5-permission-summary)
+- [Common Printer Failures and Usual Causes](#common-printer-failures-and-usual-causes)
+  - [PCL XL Error Pages](#pcl-xl-error-pages)
+  - [Print Jobs Stuck in Queue](#print-jobs-stuck-in-queue)
+  - [Printer Appears Offline](#printer-appears-offline)
+  - [Incorrect or Missing Printer Drivers](#incorrect-or-missing-printer-drivers)
+  - [Printer Not Found During Installation](#printer-not-found-during-installation)
+  - [Documents Print Incorrectly](#documents-print-incorrectly)
+  - [Slow Printing](#slow-printing)
+- [Quick Troubleshooting Logic](#quick-troubleshooting-logic)
+- [Printer Driver Types Explained](#printer-driver-types-explained)
+  - [PCL (Printer Command Language)](#pcl-printer-command-language)
+  - [PostScript (PS)](#postscript-ps)
+  - [Universal Print Drivers](#universal-print-drivers)
+- [Printer Port Types Explained](#printer-port-types-explained)
+  - [Standard TCP/IP Port](#standard-tcpip-port)
+  - [WSD (Web Services for Devices)](#wsd-web-services-for-devices)
+  - [USB Port](#usb-port)
+- [Where to Find Printer Drivers](#where-to-find-printer-drivers)
+- [HP Drivers](#hp-drivers)
+    - [Primary driver source](#primary-driver-source)
+    - [HP driver repository](#hp-driver-repository)
+    - [HP Enterprise driver packs](#hp-enterprise-driver-packs)
+- [Epson Drivers](#epson-drivers)
+    - [Primary source](#primary-source)
+    - [Epson global driver](#epson-global-driver)
+- [Xerox Drivers](#xerox-drivers)
+    - [Primary driver](#primary-driver)
+    - [Xerox driver downloads](#xerox-driver-downloads)
+    - [Ricoh Drivers](#ricoh-drivers)
+  - [Primary Source](#primary-source-1)
+      - [Driver Types](#driver-types)
+        - [PCL6 Driver](#pcl6-driver)
+        - [PostScript Driver](#postscript-driver)
+        - [RPCS Driver](#rpcs-driver)
+      - [Ricoh Universal Print Driver](#ricoh-universal-print-driver)
+      - [When to Try a Different Driver](#when-to-try-a-different-driver)
+  - [Example Troubleshooting Scenario](#example-troubleshooting-scenario)
+- [Comparing driver types across vendors](#comparing-driver-types-across-vendors)
+- [Microsoft Update Catalog](#microsoft-update-catalog)
+- [Driver Installation (Manual)](#driver-installation-manual)
+- [Best Practice for Driver Selection](#best-practice-for-driver-selection)
+- [Common Printer Helpdesk Tickets and Fast Fixes](#common-printer-helpdesk-tickets-and-fast-fixes)
+  - [Printer Shows Offline](#printer-shows-offline)
+- [Print Jobs Stuck in Queue](#print-jobs-stuck-in-queue-1)
+- [PCL XL Error Pages](#pcl-xl-error-pages-1)
+- [Printer Prints Random Characters](#printer-prints-random-characters)
+- [Printer Not Found During Installation](#printer-not-found-during-installation-1)
+- [Printing Is Very Slow](#printing-is-very-slow)
+- [Printer Driver Installation Fails](#printer-driver-installation-fails)
+- [Printer Works for Some Users but Not Others](#printer-works-for-some-users-but-not-others)
+- [Printer Disappears After Reboot](#printer-disappears-after-reboot)
+- [Test Page Prints but Documents Fail](#test-page-prints-but-documents-fail)
+- [Quick Diagnostic Shortcut](#quick-diagnostic-shortcut)
 
 ---
 # 1. Device / Network Checks
@@ -93,10 +117,16 @@ ping 192.168.1.45
 ### **Interpretation**
 
 **If Replies are received:**
+
+```
 → Printer reachable on the network
+```
 
 **If Request timed out:** 
+
+```
 → Printer offline, incorrect IP, or network issue
+```
 
 ---
 
@@ -120,7 +150,7 @@ Example
 start http://192.168.1.45
 ```
 
-**Permission level**
+**Permission level**  
 *Standard User*
 ### **Notes**
 
@@ -145,7 +175,7 @@ View installed printers along with driver and port information.
 wmic printer get name,portname,drivername
 ```
 
-**Permission level**
+**Permission level**  
 *Standard User*
 ### **Notes**
 
@@ -167,7 +197,7 @@ Identify stuck or failed print jobs.
 wmic printjob list brief
 ```
 
-**Permission level**
+**Permission level**  
 *Standard User*
 ### **Notes**
 
@@ -185,7 +215,7 @@ Determine how Windows connects to the printer.
 Get-PrinterPort
 ```
 
-**Permission level**
+**Permission level**  
 *Standard User*
 
 **Common port types**
@@ -214,7 +244,7 @@ Verify that the Windows print spooler service is running.
 sc query spooler
 ```
 
-**Permission level**
+**Permission level**  
 *Standard User*
 
 **Expected output**
@@ -238,7 +268,7 @@ net stop spooler
 net start spooler
 ```
 
-**Permission level**
+**Permission level**  
 *Administrator required*
 
 ---
@@ -255,7 +285,7 @@ del /Q /F %systemroot%\System32\spool\PRINTERS\*.*
 net start spooler
 ```
 
-**Permission level**
+**Permission level**  
 *Administrator required*
 
 **Notes**
@@ -273,7 +303,7 @@ Manage or remove problematic printer drivers.
 printui /s /t2
 ```
 
-**Permission level**
+**Permission level**  
 *Administrator required* to modify drivers
 
 **Result**
@@ -298,7 +328,7 @@ Install drivers from extracted driver packages.
 pnputil /add-driver driver.inf /install
 ```
 
-**Permission level**
+**Permission level**  
 *Administrator required*
 
 ---
@@ -481,7 +511,9 @@ ping PRINTER_IP
 
 Confirm printer port configuration.
 
-Many admins replace **WSD ports with Standard TCP/IP ports**.
+**Note:**
+
+*We typically replace **WSD ports with Standard TCP/IP ports**.*
 
 ---
 ## Incorrect or Missing Printer Drivers
@@ -547,9 +579,9 @@ Try a different driver type.
 
 Common combinations:
 
-PCL6  
-PCL5  
-PostScript
+- PCL6  
+- PCL5  
+- PostScript
 
 ---
 ## Slow Printing
@@ -599,7 +631,7 @@ The most common types are **PCL** and **PostScript**.
 
 **Developed by**
 
-HP
+HP (**Hewlett-Packard**)
 
 **Common variants**
 
@@ -693,6 +725,10 @@ IP_192.168.1.45
 - Direct connection to printer
 - Preferred by most administrators
 
+**Note**
+
+Network printers are typically configured with a **static IP address** so the printer’s address does not change. This ensures the printer port configured on workstations continues to point to the correct device.
+
 ---
 ## WSD (Web Services for Devices)
 
@@ -757,7 +793,7 @@ These drivers support many HP LaserJet models.
 ---
 ### HP driver repository
 
-HP maintains a public driver archive.
+HP *maintained* a public driver archive.
 
 ```
 ```
@@ -783,7 +819,11 @@ Epson printers typically provide:
 - PostScript (optional on some models)
 ### Primary source
 
-**Epson support website.
+**Epson Download Center website.
+
+```
+https://download-center.epson.com/search/?region=US&language=en
+```
 
 Search by model and select:
 
@@ -851,9 +891,9 @@ Support → Search by Model → Drivers & Downloads
 ```
 
 ---
-#### Driver Types
+## Driver Types
 
-##### PCL6 Driver
+### PCL6 Driver
 
 PCL6 is the most commonly used Ricoh driver for office environments.
 
@@ -870,7 +910,7 @@ Advantages:
 - Good compatibility with Windows
 
 ---
-##### PostScript Driver
+### PostScript Driver
 
 Ricoh devices also support PostScript on many models.
 
@@ -886,7 +926,7 @@ Advantages:
 - Better compatibility with design software
 
 ---
-##### RPCS Driver
+### RPCS Driver
 
 RPCS stands for **Ricoh Printer Command Stream**.
 
@@ -906,7 +946,7 @@ Typical usage:
 Note that RPCS drivers only work with Ricoh printers.
 
 ---
-#### Ricoh Universal Print Driver
+### Ricoh Universal Print Driver
 
 Ricoh also offers a universal driver that supports multiple Ricoh devices.
 
@@ -921,7 +961,7 @@ Benefits:
 - Easier enterprise deployment
 
 ---
-#### When to Try a Different Driver
+### When to Try a Different Driver
 
 If printing problems occur:
 
