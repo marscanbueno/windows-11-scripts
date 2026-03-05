@@ -513,7 +513,13 @@ Confirm printer port configuration.
 
 **Note:**
 
-*We typically replace **WSD ports with Standard TCP/IP ports**.*
+*We typically replaced **WSD ports with Standard TCP/IP ports.**
+
+```
+Control Panel → Devices and Printers → Printer Properties → Ports
+```
+
+That shows where the port can be verified in Windows.
 
 ---
 ## Incorrect or Missing Printer Drivers
@@ -577,7 +583,7 @@ Install printer manually using **IP address**.
 
 Try a different driver type.
 
-Common combinations:
+**Common combinations:**
 
 - PCL6  
 - PCL5  
