@@ -60,14 +60,14 @@ Most printer problems fall into one of these categories:
 - [Xerox Drivers](#xerox-drivers)
     - [Primary driver](#primary-driver)
     - [Xerox driver downloads](#xerox-driver-downloads)
-    - [Ricoh Drivers](#ricoh-drivers)
+- [Ricoh Drivers](#ricoh-drivers)
   - [Primary Source](#primary-source-1)
-      - [Driver Types](#driver-types)
-        - [PCL6 Driver](#pcl6-driver)
-        - [PostScript Driver](#postscript-driver)
-        - [RPCS Driver](#rpcs-driver)
-      - [Ricoh Universal Print Driver](#ricoh-universal-print-driver)
-      - [When to Try a Different Driver](#when-to-try-a-different-driver)
+  - [Driver Types](#driver-types)
+    - [PCL6 Driver](#pcl6-driver)
+    - [PostScript Driver](#postscript-driver)
+    - [RPCS Driver](#rpcs-driver)
+    - [Ricoh Universal Print Driver](#ricoh-universal-print-driver)
+    - [When to Try a Different Driver](#when-to-try-a-different-driver)
   - [Example Troubleshooting Scenario](#example-troubleshooting-scenario)
 - [Comparing driver types across vendors](#comparing-driver-types-across-vendors)
 - [Microsoft Update Catalog](#microsoft-update-catalog)
@@ -176,7 +176,9 @@ wmic printer get name,portname,drivername
 ```
 
 **Permission level**  
+
 *Standard User*
+
 ### **Notes**
 
 Useful for identifying:
@@ -215,7 +217,8 @@ Determine how Windows connects to the printer.
 Get-PrinterPort
 ```
 
-**Permission level**  
+**Permission level**   
+
 *Standard User*
 
 **Common port types**
@@ -236,6 +239,7 @@ These commands address the most common Windows printing failures.
 ## Check print spooler status
 
 **Purpose**
+
 Verify that the Windows print spooler service is running.
 
 **Command**
@@ -245,6 +249,7 @@ sc query spooler
 ```
 
 **Permission level**  
+
 *Standard User*
 
 **Expected output**
@@ -259,6 +264,7 @@ If the service is stopped, printing will fail.
 ## Restart the print spooler
 
 **Purpose**
+
 Resolve many printing failures caused by a stalled spooler.
 
 **Command**
@@ -269,12 +275,14 @@ net start spooler
 ```
 
 **Permission level**  
+
 *Administrator required*
 
 ---
 ## Clear the print spool folder
 
 **Purpose**
+
 Remove corrupted or stuck print jobs.
 
 **Command**
@@ -286,15 +294,18 @@ net start spooler
 ```
 
 **Permission level**  
+
 *Administrator required*
 
 **Notes**
+
 All pending print jobs will be removed.
 
 ---
 ## Open printer driver management
 
 **Purpose**
+
 Manage or remove problematic printer drivers.
 
 **Command**
@@ -304,6 +315,7 @@ printui /s /t2
 ```
 
 **Permission level**  
+
 *Administrator required* to modify drivers
 
 **Result**
@@ -320,6 +332,7 @@ This interface allows drivers to be removed or replaced.
 ## Install printer driver manually
 
 **Purpose**
+
 Install drivers from extracted driver packages.
 
 **Command**
@@ -329,6 +342,7 @@ pnputil /add-driver driver.inf /install
 ```
 
 **Permission level**  
+
 *Administrator required*
 
 ---
@@ -439,6 +453,7 @@ This section lists common printing problems, their likely causes, and typical fi
 ## PCL XL Error Pages
 
 **Symptoms**
+
 Printer prints a page containing an error message such as:
 
 ```
@@ -871,7 +886,7 @@ https://www.support.xerox.com
 Search by model.
 
 ---
-### Ricoh Drivers
+# Ricoh Drivers
 
 Ricoh printers and multifunction devices typically provide several driver types depending on the model.
 
